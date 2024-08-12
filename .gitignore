@@ -1,0 +1,8 @@
+/node_modules/
+package-lock.json
+.env
+Kanga---TravelPocket.code-workspace
+.vscode
+__pycache__
+d
+1

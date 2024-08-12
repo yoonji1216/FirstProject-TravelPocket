@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Pocket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/main1.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="../../static/img/KakaoTalk_20240731_165243057.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="hero-anime">
+
+    <div class="navigation-wrap start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="" target="_blank">Travel Pocket</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ">
+                                    <a class="nav-link " href="/main">Home</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="checklistLink">
+                                    <a class="nav-link" href="/checklist">CheckList</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="newsletterLink">
+                                    <a class="nav-link" href="/newsletter">Newsletter</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="chatbotLink">
+                                    <a class="nav-link" href="/chatbot">ChatBot</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="loginLink">
+                                    <a class="nav-link" href="/login">Login / Join</a>
+                                </li>
+                                <!-- 로그아웃 버튼 및 마이페이지 버튼 (초기에는 숨김) -->
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 d-none" id="logoutLink">
+                                    <a class="nav-link" id="logoutButton">Logout</a>
+
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 d-none" id="myPageLink">
+                                    <a class="nav-link" href="/mypage">MyPage</a>
+                                </li>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="seperate-color">
+        <main class="main-content">
+            <section class="content-wrapper section" id="section1">
+                <h1 class="title-top">YOUR TRAVEL</h1>
+                <div class="content">
+                    <div class="left">
+                        <img id="airplane" src="/main/templates/free-icon-airplane-3575525.png" alt="Icon 1">
+                        <a id="travel-question" href="#section2" style="text-decoration: none;">당신의 여행지는 어디인가요?</a>
+                    </div>
+                    <figure class="pocket">
+                        <figure class="card"></figure>
+                    </figure>
+                    <div class="right">
+                        <img id="pouch" src="/main/templates/free-icon-pencil-6300969.png" alt="Icon 2">
+                        <a id="travel-pocket" href="/user-info">여행 일정을 추가해보세요.</a>
+                    </div>
+                </div>
+                <h1 class="title-bottom">IN MY POCKET</h1>
+            </section>
+            <!-- 1번 페이지 -->
+            <section class="section" id="section2">
+                <main>
+                    <ul class='slider'>
+                        <li class='item'
+                            style="background-image: url('https://cdn.pixabay.com/photo/2017/03/03/16/28/statue-of-liberty-2114376_1280.jpg')">
+                            <div class='content-2'>
+                                <h2 class='title'>당신의 여행지는 어디인가요? </h2>
+                                <br>
+                                <br>
+                                <!-- <h2 class='title'>어디인가요?</h2> -->
+                                <a id="go1"  style="text-decoration: none;" href="/user-info"><button class="blinking-text">Go Travel !</button></a>
+                            </div>
+                        </li>
+                        <li class='item'
+                            style="background-image: url('https://cdn.pixabay.com/photo/2020/02/05/20/31/uk-4822338_1280.jpg')">
+                            <div class='content-2'>
+                                <h2 class='title'> 전 세계 어디든 </h2>
+                                <br>
+                                <br>
+                                <a id="go2"  style="text-decoration: none;" href="/user-info"><button class="blinking-text">Go Travel !</button></a>
+                            </div>
+                        </li>
+                        <li class='item'
+                            style="background-image: url('https://cdn.pixabay.com/photo/2019/07/13/16/44/woman-4335235_1280.jpg')">
+                            <div class='content-2'>
+                                <h2 class='title'>나만을 위한</h2>
+                                <h2 class='title'>CheckList </h2>
+                                <br>
+                                <br>
+                                <a id="go3"  style="text-decoration: none;" href="/checklist"><button class="blinking-text">Go Travel !</button></a>
+                            </div>
+                        </li>
+                        <li class='item'
+                            style="background-image: url('https://cdn.pixabay.com/photo/2021/11/25/15/28/temple-6823939_1280.jpg')">
+                            <div class='content-2'>
+                                <h2 class='title'>나만을 위한</h2>
+                                <h2 class='title'>NewsLetter</h2>
+                                <br>
+                                <br>
+                                <a id="go4" style="text-decoration: none;" href="/newsletter"><button class="blinking-text">Go Travel !</button></a>
+                            </div>
+                        </li>
+                        <li class='item'
+                            style="background-image: url('https://cdn.pixabay.com/photo/2020/05/04/16/27/image-5129771_1280.jpg')">
+                            <div class='content-2'>
+                                <h2 class='title'>나만을 위한 </h2>
+                                <h2 class='title'>ChatBot </h2>
+                                <br>
+                                <br>
+                                <a id="go5" style="text-decoration: none;"  href="/chatbot"><button class="blinking-text">Go Travel !</button></a>
+                            </div>
+                        </li>
+                        <li class='item'
+                            style="background-image: url('https://cdn.pixabay.com/photo/2014/05/26/09/58/sydney-opera-house-354375_1280.jpg')">
+                            <div class='content-2'>
+                                <h2 class='title'>TravelPocket</h2>
+                                <h2 class='title'>나에게 딱 맞게</h2>
+                                <br>
+                                <br>
+                                <a id="go6" style="text-decoration: none;"  href="/user-info"><button class="blinking-text">Go Travel !</button></a>
+                            </div>
+                        </li>
+                    </ul>
+                    <nav class='nav'>
+                        <ion-icon class='btn prev' name="arrow-back-outline"></ion-icon>
+                        <ion-icon class='btn next' name="arrow-forward-outline"></ion-icon>
+                    </nav>
+                </main>
+                <!-- 상단으로 이동하는 버튼 추가 -->
+                <button id="scrollToTop" title="Go to top">Main</button>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="../main.js"></script>
+    <script src="../../static/sessioncheck.js"></script>
+
+    <!-- top 버튼 변경 -->
+    <script>
+        $(document).ready(function () {
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('#scrollToTop').fadeIn();
+                } else {
+                    $('#scrollToTop').fadeOut();
+                }
+            });
+
+            $('#scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 600);
+                return false;
+            });
+
+            $(window).mousemove(function (event) {
+                if (event.clientY < 100) {
+                    $('.navigation-wrap').addClass('show-nav');
+                } else {
+                    $('.navigation-wrap').removeClass('show-nav');
+                }
+            });
+
+            // 링크 클릭 시 부드럽게 스크롤
+            $('a[href^="#"]').on('click', function (event) {
+                var target = $(this.getAttribute('href'));
+                if (target.length) {
+                    event.preventDefault();
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    });
+                }
+            });
+        });
+
+
+        document.getElementById('logoutButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // 로그아웃 성공 시, 페이지를 리다이렉트하거나 사용자에게 알림
+                    window.location.href = '/main';
+                } else {
+                    // 로그아웃 실패 시, 사용자에게 알림
+                    const errorData = await response.json();
+                    alert('로그아웃 중 오류 발생: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('로그아웃 중 오류 발생:', error);
+                alert('로그아웃 중 오류 발생');
+            }
+        });
+
+
+
+
+
+
+        $(document).ready(function () {
+            $.ajax({
+                url: '/session',
+                method: 'GET',
+                success: function (response) {
+                    if (response.loggedIn) {
+                        // 로그인된 상태일 때 링크 활성화
+                        $('#travel-question').removeClass('disabled').attr('href', '#section2');
+                        $('#travel-pocket').removeClass('disabled').attr('href', '/user-info');
+                        $('#go1').removeClass('disabled').attr('href', '/user-info');
+                        $('#go2').removeClass('disabled').attr('href', '/user-info');
+                        $('#go3').removeClass('disabled').attr('href', '/checklist');
+                        $('#go4').removeClass('disabled').attr('href', '/newsletter');
+                        $('#go5').removeClass('disabled').attr('href', '/chatbot');
+                        $('#go6').removeClass('disabled').attr('href', '/user-info');
+
+                    } else {
+                        // 로그인되지 않은 상태일 때 링크 비활성화
+                        $('#travel-question').addClass('disabled').removeAttr('href');
+                        $('#travel-pocket').addClass('disabled').removeAttr('href');
+                        $('#go1').addClass('disabled').removeAttr('href', '/user-info');
+                        $('#go2').addClass('disabled').removeAttr('href', '/user-info');
+                        $('#go3').addClass('disabled').removeAttr('href', '/checklist');
+                        $('#go4').addClass('disabled').removeAttr('href', '/newsletter');
+                        $('#go5').addClass('disabled').removeAttr('href', '/chatbot');
+                        $('#go6').addClass('disabled').removeAttr('href', '/user-info');
+                    }
+                },
+                error: function (error) {
+                    console.error('Error checking session:', error);
+                }
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

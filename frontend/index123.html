@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인 페이지</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/user/session');
+                const sessionData = await response.json();
+
+                if (sessionData.loggedIn) {
+                    document.getElementById('login-btn').style.display = 'none';
+                    document.getElementById('signup-btn').style.display = 'none';
+                    document.getElementById('mypage-btn').style.display = 'block';
+                    document.getElementById('logout-btn').style.display = 'block';
+                    document.getElementById('travel-info-btn').style.display = 'block';
+                    document.getElementById('travel-input-btn').style.display = 'block';
+                } else {
+                    document.getElementById('login-btn').style.display = 'block';
+                    document.getElementById('signup-btn').style.display = 'block';
+                    document.getElementById('mypage-btn').style.display = 'none';
+                    document.getElementById('logout-btn').style.display = 'none';
+                    document.getElementById('travel-info-btn').style.display = 'none';
+                    document.getElementById('travel-input-btn').style.display = 'none';
+                }
+            } catch (error) {
+                console.error('세션 확인 중 오류:', error);
+            }
+        });
+
+        async function handleLogout() {
+            try {
+                const response = await fetch('/user/logout', {
+                    method: 'POST'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('로그아웃 성공');
+                    window.location.reload();
+                } else {
+                    alert('로그아웃 중 오류: ' + result.message);
+                }
+            } catch (error) {
+                console.error('로그아웃 중 오류:', error);
+                alert('로그아웃 중 오류 발생');
+            }
+        }
+    </script>
+</head>
+<body>
+    <button id="login-btn" style="display:none;" onclick="location.href='login.html'">로그인</button>
+    <button id="signup-btn" style="display:none;" onclick="location.href='register.html'">회원가입</button>
+    <button id="mypage-btn" style="display:none;" onclick="location.href='mypage.html'">마이페이지</button>
+    <button id="logout-btn" style="display:none;" onclick="handleLogout()">로그아웃</button>
+    <button id="travel-input-btn" style="display:none;" onclick="location.href='travel_info_input.html'">여행 정보 입력</button>
+    <button id="travel-info-btn" style="display:none;" onclick="location.href='travel_info.html'">여행 정보 보기</button>
+</body>
+</html>

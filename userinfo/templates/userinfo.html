@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write Your Travel</title>
+    <link rel="stylesheet" href="../css/userinfo.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 추가 -->
+    <link rel="icon" type="image/png" sizes="16x16"  href="../../static/img/KakaoTalk_20240731_165243057.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="search-container">
+        <div style="position: relative;">
+            <input type="text" placeholder="어디로 떠나시나요?" id="destination">
+            <div class="dropdown" id="dropdown">
+                <!-- Dropdown options -->
+                <div>스위스</div> 
+                <div>일본</div> 
+                <div>중국</div> 
+                <div>필리핀</div> 
+                <div>싱가포르</div> 
+                <div>인도네시아</div> 
+                <div>홍콩</div> 
+                <div>타이완</div> 
+                <div>태국</div> 
+                <div>베트남</div> 
+                <div>미국</div> 
+                <div>괌</div> 
+                <div>캐나다</div> 
+                
+            </div>
+        </div>
+        <div class="date-group" id="dateGroup">
+            <div>
+                <label for="checkin">출발 날짜</label>
+                <input type="date" id="checkin">
+            </div>
+            <div>
+                <label for="checkout">도착 날짜</label>
+                <input type="date" id="checkout">
+            </div>
+        </div>
+        <p> 동행인</p>
+        <div class="guest-group" id="guestGroup" align="center">
+            <div class="checkbox-group">
+                <input type="checkbox" id="companion_kid">
+                <label for="companion_kid" class="cb2"></label>만 12세 이하 어린이<br>
+                <input type="checkbox" id="companion_teenager">
+                <label for="companion_teenager" class="cb2"></label>성인<br>
+                <input type="checkbox" id="companion_adult">
+                <label for="companion_adult" class="cb2"></label>노인<br>
+                <input type="checkbox" id="companion_pet">
+                <label for="companion_pet" class="cb2"></label>반려동물<br>
+                <input type="checkbox" id="companion_disabled">
+                <label for="companion_disabled" class="cb2"></label>장애인<br>
+            </div>
+        </div>
+        <div class="button">
+            <p class="btnText">READY?</p>
+            <div class="btnTwo" >
+                <a href="/checklist" id="submitBtn" disabled><p class="btnText2">GO!</p></a>
+            </div>
+         </div>
+    </div>
+
+    <script src="userinfo.js"></script>
+    <script>
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Corrected the CSS file path based on the directory structure -->
+    <link rel="stylesheet">
+    <script>
+        async function updateUser() {
+            const user_id = document.getElementById('user_id').value;
+            const user_pw = document.getElementById('user_pw').value;
+            const new_nick = document.getElementById('new_nick').value;
+            const new_email = document.getElementById('new_email').value;
+
+            try {
+                const response = await fetch('/user/update', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ user_id, user_pw, new_nick, new_email }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert(result.message || '유저 정보 수정 성공');
+                } else {
+                    alert('유저 정보 수정 중 오류: ' + (result.message || result));
+                }
+            } catch (error) {
+                console.error('유저 정보 수정 중 오류:', error);
+                alert('유저 정보 수정 중 오류: ' + error.message);
+            }
+        }
+
+        async function deleteUser() {
+    const user_id = document.getElementById('user_id').value;
+    const user_pw = document.getElementById('user_pw').value;
+
+    try {
+        const response = await fetch('/user/delete', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ user_id, user_pw }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            alert(result.message || '회원 탈퇴 성공');
+            window.location.href = 'index123.html'; // 회원 탈퇴 성공 시 메인 페이지로 리디렉션
+        } else {
+            alert('회원 탈퇴 중 오류: ' + (result.message || result));
+        }
+    } catch (error) {
+        console.error('회원 탈퇴 중 오류:', error);
+        alert('회원 탈퇴 중 오류: ' + error.message);
+    }
+}
+
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <hr>
+        <div id="content">
+            <h1>프로필</h1>
+            <div class="mypage-whole">
+                <div class="profile-img-container">
+                    <!-- <img id="profileImg" src="../accounts/images/profile.png" alt="프로필 사진" /> -->
+                    <input type="file" id="imageInput" style="display: none;" />
+                </div>
+            </div>
+            <div class="acc_check">
+                <h3>회원정보 확인</h3>
+                <form>
+                    <div class="form-group">
+                        <label for="user_id">ID</label>
+                        <input type="text" id="user_id" name="ID" placeholder="ID" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_pw">비밀번호</label>
+                        <input type="password" id="user_pw" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new_nick">새 닉네임</label>
+                        <input type="text" id="new_nick" name="new_nick" placeholder="New Nickname">
+                    </div>
+                    <div class="form-group">
+                        <label for="new_email">새 이메일</label>
+                        <input type="text" id="new_email" name="new_email" placeholder="New Email">
+                    </div>
+                    <div>
+                        <button type="button" name="btn" onclick="updateUser()">회원정보수정</button>
+                    </div>
+                </form>
+            </div>
+            <div class="account-actions">
+                <a href="#" class="delete-account" onclick="deleteUser()">회원탈퇴</a>
+            </div>
+            <a href="/" class="test-button">테스트</a>
+        </div>
+        <hr>
+        <div data-include-path="../../static/templates/footer.html" class="footer"></div>
+    </div>
+    <!-- 
+    <script src="../../static/include.js"></script>
+    <script src="../mypage.js"></script> -->
+</body>
+
+</html>

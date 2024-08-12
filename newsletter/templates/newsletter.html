@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Newsletter</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../newsletter/css/newsletter1.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script src="https://use.fontawesome.com/f5ea91e308.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="../css/newsletter.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/header.css">
+    <script src="../../main/jquery-3.7.1.min.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="../../static/img/KakaoTalk_20240731_165243057.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <main class="hero-anime">
+        <div class="navigation-wrap bg-light start-header start-style">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <nav class="navbar navbar-expand-md navbar-light">
+                            <a class="navbar-brand" href="/main">Travel Pocket</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="/main">Home</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="checklistLink">
+                                        <a class="nav-link" href="/checklist">CheckList</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="newsletterLink">
+                                        <a class="nav-link" href="/newsletter">Newsletter</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="chatbotLink">
+                                        <a class="nav-link" href="/chatbot">ChatBot</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="loginLink">
+                                        <a class="nav-link" href="/login">Login / Join</a>
+                                    </li>
+                                    <!-- 로그아웃 버튼 및 마이페이지 버튼 (초기에는 숨김) -->
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 d-none" id="logoutLink">
+                                        <a class="nav-link" id="logoutButton">Logout</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 d-none" id="myPageLink">
+                                        <a class="nav-link" href="/mypage">MyPage</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="title">NEWS-LETTER</div>
+    <div class="slider-container">
+        <button class="slider-button left" onclick="slideLeft()">❮</button>
+        <div class="slider">
+            <!-- 카드들이 이곳에 삽입됩니다. -->
+        </div>
+        <button class="slider-button right" onclick="slideRight()">❯</button>
+    </div>
+
+    <div class="card-modal" id="card-modal">
+        <button class="modal-close" onclick="closeModal()">×</button>
+        <div class="modal-content"></div>
+    </div>
+    <script> </script>
+    <script src="../../static/include.js"></script>
+    <script src="../newsletter1.js"></script>
+    <script src="../newsletter.js"></script>
+    <script src="../../static/sessioncheck.js"></script>
+    <script>
+        
+    </script>
+
+</body>
+
+</html>

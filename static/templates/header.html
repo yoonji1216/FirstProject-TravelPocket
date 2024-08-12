@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="../../main/jquery-3.7.1.min.js"></script>
+</head>
+
+ 
+
+<body class="hero-anime">
+    
+    <div class="navigation-wrap  start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="/main">Travel Pocket</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="/main">Home</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="checklistLink">
+                                    <a class="nav-link" href="/checklist">CheckList</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="newsletterLink">
+                                    <a class="nav-link" href="/newsletter">Newsletter</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="chatbotLink">
+                                    <a class="nav-link" href="/chatbot">ChatBot</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4" id="loginLink">
+                                    <a class="nav-link" href="/login">Login / Join</a>
+                                </li>
+                                <!-- 로그아웃 버튼 및 마이페이지 버튼 (초기에는 숨김) -->
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 d-none" id="logoutLink">
+                                    <a class="nav-link" id="logoutButton">Logout</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 d-none" id="myPageLink">
+                                    <a class="nav-link" href="/mypage">MyPage</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../main/jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '/session',
+                method: 'GET',
+                success: function(response) {
+                    if (response.loggedIn) {
+                        $('#loginLink').addClass('d-none');
+                        $('#logoutLink').removeClass('d-none');
+                        $('#myPageLink').removeClass('d-none');
+                        $('#checklistLink').removeClass('d-none');
+                        $('#chatbotLink').removeClass('d-none');
+                        $('#newsletterLink').removeClass('d-none');
+
+                    } else {
+                        $('#loginLink').removeClass('d-none');
+                        $('#logoutLink').addClass('d-none');
+                        $('#myPageLink').addClass('d-none');
+                        $('#checklistLink').addClass('d-none');
+                        $('#chatbotLink').addClass('d-none');
+                        $('#newsletterLink').addClass('d-none');
+                    }
+                },
+                error: function(error) {
+                    console.error('Error checking session:', error);
+                }
+            });
+        });
+
+        document.getElementById('logoutButton').addEventListener('click', async () => {
+            try {
+                const response = await fetch('/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+        
+                if (response.ok) {
+                    // 로그아웃 성공 시, 페이지를 리다이렉트하거나 사용자에게 알림
+                    window.location.href = '/';
+                } else {
+                    // 로그아웃 실패 시, 사용자에게 알림
+                    const errorData = await response.json();
+                    alert('로그아웃 중 오류 발생: ' + errorData.message);
+                }
+            } catch (error) {
+                console.error('로그아웃 중 오류 발생:', error);
+                alert('로그아웃 중 오류 발생');
+            }
+        });
+        
+
+    </script>
+</body>
+</html>
